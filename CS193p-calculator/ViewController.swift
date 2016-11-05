@@ -20,6 +20,23 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    // Outlets:
+    @IBOutlet weak var display: UILabel!
+    
+    var userIsInTheMiddleOfTyping = false
+    
+    // Actions:
+    @IBAction func touchDigit(_ sender: UIButton) {
+        let digit = sender.currentTitle!
+        
+        if userIsInTheMiddleOfTyping {
+            let textCurrentlyOnDisplay = display.text!
+            display.text = textCurrentlyOnDisplay + digit
+        } else {
+            display.text = digit
+        }
+        
+        userIsInTheMiddleOfTyping = true
+    }
 }
 
