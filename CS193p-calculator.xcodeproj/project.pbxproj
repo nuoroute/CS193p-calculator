@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC4E777F1DCF41CE00D922A1 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4E777E1DCF41CE00D922A1 /* Calculator.swift */; };
 		ACE294F21DCE5FEF007E9E1B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE294F11DCE5FEF007E9E1B /* AppDelegate.swift */; };
 		ACE294F41DCE5FEF007E9E1B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE294F31DCE5FEF007E9E1B /* ViewController.swift */; };
 		ACE294F71DCE5FEF007E9E1B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE294F51DCE5FEF007E9E1B /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC4E777E1DCF41CE00D922A1 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		ACE294EE1DCE5FEF007E9E1B /* CS193p-calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS193p-calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE294F11DCE5FEF007E9E1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACE294F31DCE5FEF007E9E1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				ACE294F11DCE5FEF007E9E1B /* AppDelegate.swift */,
+				AC4E777E1DCF41CE00D922A1 /* Calculator.swift */,
 				ACE294F31DCE5FEF007E9E1B /* ViewController.swift */,
 				ACE294F51DCE5FEF007E9E1B /* Main.storyboard */,
 				ACE294F81DCE5FEF007E9E1B /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			files = (
 				ACE294F41DCE5FEF007E9E1B /* ViewController.swift in Sources */,
 				ACE294F21DCE5FEF007E9E1B /* AppDelegate.swift in Sources */,
+				AC4E777F1DCF41CE00D922A1 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 				ACE295021DCE5FEF007E9E1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

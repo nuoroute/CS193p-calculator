@@ -20,13 +20,22 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // Outlets:
-    @IBOutlet weak var display: UILabel!
+    private var userIsInTheMiddleOfTyping = false
     
-    var userIsInTheMiddleOfTyping = false
+    private var displayValue: Double {
+        get {
+            return Double(display.text!)!
+        }
+        set {
+            display.text = String(newValue)
+        }
+    }
+    
+    // Outlets:
+    @IBOutlet private weak var display: UILabel!
     
     // Actions:
-    @IBAction func touchDigit(_ sender: UIButton) {
+    @IBAction private func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
         
         if userIsInTheMiddleOfTyping {
@@ -38,14 +47,16 @@ class ViewController: UIViewController {
         
         userIsInTheMiddleOfTyping = true
     }
-    @IBAction func performOperation(_ sender: UIButton) {
+    
+    @IBAction private func performOperation(_ sender: UIButton) {
         userIsInTheMiddleOfTyping = false
         
         if let mathematicalSymbol = sender.currentTitle {
             if mathematicalSymbol == "π" {
-                display.text = String(Double.pi)
+                displayValue = Double.pi
+            } else if mathematicalSymbol == "√" {
+                displayValue = sqrt(displayValue)
             }
         }
     }
 }
-
