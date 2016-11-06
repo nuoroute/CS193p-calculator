@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private var calculator = Calculator()
+    
     private var userIsInTheMiddleOfTyping = false
     
     private var displayValue: Double {
@@ -49,14 +51,33 @@ class ViewController: UIViewController {
     }
     
     @IBAction private func performOperation(_ sender: UIButton) {
-        userIsInTheMiddleOfTyping = false
+        if userIsInTheMiddleOfTyping {
+            calculator.setOperand(operand: displayValue)
+            userIsInTheMiddleOfTyping = false
+        }
         
         if let mathematicalSymbol = sender.currentTitle {
-            if mathematicalSymbol == "π" {
-                displayValue = Double.pi
-            } else if mathematicalSymbol == "√" {
-                displayValue = sqrt(displayValue)
-            }
+            calculator.performOperation(symbol: mathematicalSymbol)
         }
+        
+        displayValue = calculator.result
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
