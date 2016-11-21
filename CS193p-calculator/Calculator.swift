@@ -10,7 +10,34 @@ import Foundation
 
 class Calculator {
     
+    typealias PropertyList = AnyObject
+
     private var accumulator = 0.0
+    private var internalProgram = [AnyObject]()
+    
+    var program: PropertyList {
+        get {
+            return internalProgram as Calculator.PropertyList
+        }
+        set {
+            clear()
+            if let ops = newValue as? [AnyObject] {
+                for op in ops {
+                    if let operand = op as? Double {
+                        setOperand(operand: operand)
+                    } else if let operand = op as? String {
+                        performOperation(symbol: operand)
+                    }
+                }
+            }
+        }
+    }
+    
+    func clear() {
+        accumulator = 0.0
+        pending = nil
+        internalProgram.removeAll()
+    }
     
     private enum Operation {
         case Constant(Double)
@@ -21,6 +48,7 @@ class Calculator {
     
     func setOperand(operand: Double) {
         accumulator = operand
+        internalProgram.append(operand as AnyObject)
     }
     
     private var operations: [String: Operation] = [
@@ -56,6 +84,8 @@ class Calculator {
                 executePendingBinaryOperation()
             }
         }
+        
+        internalProgram.append(symbol as AnyObject)
     }
     
     private func executePendingBinaryOperation() {

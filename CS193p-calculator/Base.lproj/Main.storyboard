@@ -175,11 +175,11 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oFx-R2-kRa">
                                                         <rect key="frame" x="0.0" y="0.0" width="82" height="106.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                                        <state key="normal" title="e">
+                                                        <state key="normal" title="m+">
                                                             <color key="titleColor" red="0.99391746520000002" green="0.57341817159999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GWi-Qa-swK"/>
+                                                            <action selector="save" destination="BYZ-38-t0r" eventType="touchUpInside" id="YJ4-KY-ccf"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nyb-6x-aRw">
@@ -219,12 +219,13 @@
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qEi-VK-l6e">
                                                         <rect key="frame" x="0.0" y="0.0" width="82" height="106.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                        <state key="normal" title="cos">
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <state key="normal" title="m-">
                                                             <color key="titleColor" red="0.99391746520000002" green="0.57341817159999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="performOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RXn-NL-POY"/>
+                                                            <action selector="restore" destination="BYZ-38-t0r" eventType="touchUpInside" id="AHs-Dw-bLR"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8SO-oO-8bj">

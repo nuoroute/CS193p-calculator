@@ -36,6 +36,20 @@ class ViewController: UIViewController {
     // Outlets:
     @IBOutlet private weak var display: UILabel!
     
+    // Calculator Memory:
+    var savedProgram: Calculator.PropertyList?
+    
+    @IBAction func save() {
+        savedProgram = calculator.program
+    }
+    
+    @IBAction func restore() {
+        if savedProgram != nil {
+            calculator.program = savedProgram!
+            displayValue = calculator.result
+        }
+    }
+    
     // Actions:
     @IBAction private func touchDigit(_ sender: UIButton) {
         let digit = sender.currentTitle!
