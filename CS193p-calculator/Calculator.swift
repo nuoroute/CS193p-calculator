@@ -103,4 +103,5 @@ class Calculator {
         pending = nil
         internalProgram.removeAll()
     }
+    
 }
