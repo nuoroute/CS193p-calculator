@@ -9,20 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    private var userIsTyping = false
+    
     private var calculator = Calculator()
     
-    private var userIsInTheMiddleOfTyping = false
+    @IBOutlet private weak var display: UILabel!
     
     private var displayValue: Double {
         get {
@@ -33,10 +33,33 @@ class ViewController: UIViewController {
         }
     }
     
-    // Outlets:
-    @IBOutlet private weak var display: UILabel!
+    @IBAction private func touchDigit(_ sender: UIButton) {
+        let digit = sender.currentTitle!
+        
+        if userIsTyping {
+            let textCurrentlyOnDisplay = display.text!
+            display.text = textCurrentlyOnDisplay + digit
+        } else {
+            display.text = digit
+        }
+        
+        userIsTyping = true
+    }
     
-    // Calculator Memory:
+    @IBAction private func performOperation(_ sender: UIButton) {
+        if userIsTyping {
+            calculator.setOperand(displayValue)
+            userIsTyping = false
+        }
+        
+        if let symbol = sender.currentTitle {
+            calculator.performOperation(symbol)
+        }
+        
+        displayValue = calculator.result
+    }
+    
+    // Calculator Memory
     var savedProgram: Calculator.PropertyList?
     
     @IBAction func save() {
@@ -49,49 +72,4 @@ class ViewController: UIViewController {
             displayValue = calculator.result
         }
     }
-    
-    // Actions:
-    @IBAction private func touchDigit(_ sender: UIButton) {
-        let digit = sender.currentTitle!
-        
-        if userIsInTheMiddleOfTyping {
-            let textCurrentlyOnDisplay = display.text!
-            display.text = textCurrentlyOnDisplay + digit
-        } else {
-            display.text = digit
-        }
-        
-        userIsInTheMiddleOfTyping = true
-    }
-    
-    @IBAction private func performOperation(_ sender: UIButton) {
-        if userIsInTheMiddleOfTyping {
-            calculator.setOperand(operand: displayValue)
-            userIsInTheMiddleOfTyping = false
-        }
-        
-        if let mathematicalSymbol = sender.currentTitle {
-            calculator.performOperation(symbol: mathematicalSymbol)
-        }
-        
-        displayValue = calculator.result
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
